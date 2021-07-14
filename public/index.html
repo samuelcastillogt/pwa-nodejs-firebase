@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="/js/pwa.webmanifest">
+  <link rel="stylesheet" href="/style.css">
+  <title>Ochochil</title>
+</head>
+<body>
+    <header>
+        <span><img src="img/js/este.png" alt=""></span>
+    </header>
+<section class="menu-inicial">
+  <a href="/crear">
+    <div class="opcion" id="crear">
+      <h3>Crear una propiedad</h3>
+    </div>
+  </a>
+  <a href="/administrar">
+    <div class="opcion" id="admin">
+      <h3>Administrar propiedades</h3>
+    </div>
+  </a>
+  <a href="/leads">
+    <div class="opcion" id="base">
+      <h3>consultar Leads</h3>
+    </div>
+  </a>
+</section>
+
+  <script src="/js/pwa.js"></script>
+    <script src="/js/status.js"></script>
+    <style>
+ 
+    </style>
+    <div class="ham" id="ham">
+      <p class="cerrar hidden" id="cerrar">x</p>
+  </div>
+  <div class="menu hidden" id="menu">
+      <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/administrar">Administrar popiedades</a></li>
+          <li><a href="/crear">Crear propiedad</a></li>
+          <li><a href="/leads">Consultar Leads</a></li>
+      </ul>
+  
+  </div>
+  <script>
+      document.getElementById("ham").addEventListener("click", ()=>{
+    
+              document.getElementById("menu").classList.toggle("hidden")
+              document.getElementById("cerrar").classList.toggle("hidden")
+          
+          
+      })
+  </script>
+  <style>
+      .cerrar{
+          font-size: 2em;
+          font-family: bebes;
+          font-weight: bold;
+          color: honeydew;
+      }
+      .ham{
+          width: 50px;
+          height: 50px;
+          background-color: green;
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 99;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      .menu{
+          background-color: rgba(256, 0, 0, 0.6);
+          position: fixed;
+          top: 0;
+          height: 100%;
+          z-index: 9;
+          width: 100vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+      }
+      .menu ul li{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          margin: 30px;
+          padding: 20px;
+          transition: 2s;
+      }
+      .menu ul li:hover{
+          background-color: black;
+          color: red;
+          font-weight: bold;
+      }
+      .hidden{
+          display: none;
+      }
+  </style>
+</body>
+</html>

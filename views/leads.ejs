@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leads</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs'); -%>
+    <section class="disponibles">
+        <% leads.map(item =>{ %>
+            <div class="propiedad">
+                <img src="/img/silueta-hombre.png" alt=""class="photo-lead">
+                <div class="propiedad_texto">
+                    <p class="propiedad_texto_titulo"><%= item.lead.nombre %> <%= item.lead.apellido %></p>
+                    <p>Telefono: <%= item.lead.telefonno %></p>
+                    <p>Email: <a  class="editar" href="mailto:<%= item.lead.email %>">Enviar correo</a></p>
+                </div>
+                
+            </div>
+       <% }) %>
+         
+      </section>
+      <style>
+          .botones{
+              display: flex;
+              margin: 10px;
+              flex-wrap: wrap;
+              width: 100%;
+          }
+          .eliminar{
+              background-color: red;
+              border-radius: 10px;
+              padding: 5px;
+              margin: 10px;
+          }
+          .editar{
+            background-color: green;
+              border-radius: 10px;
+              padding: 5px;
+              margin: 10px;
+          }
+          .disponibles{
+              width: 90%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              align-items: center;
+          }
+          .propiedad{
+              width: 40%;
+              border: 2px solid red;
+              border-radius: 15px;
+              padding: 10px;
+              margin: 10px;
+              display: flex;
+              flex-wrap: wrap;
+          }
+          .propiedad img{
+              width: 100px;
+              height: 50%;
+          }
+          .propiedad_texto_titulo{
+              font-weight: bold;
+          }
+      </style>
+      <%- include('./partials/menu.ejs'); -%>
+</body>
+</html>

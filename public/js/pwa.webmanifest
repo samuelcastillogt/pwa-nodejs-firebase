@@ -1,0 +1,16 @@
+{
+    "name": "Ochochil.ml",
+    "short_name": "Ochochil",
+    "description": "Aplicacion de ochochil.ml",
+    "icons": [
+      {
+        "src": "/img/js/este.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+  }

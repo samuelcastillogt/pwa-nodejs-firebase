@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin='anonymous' src='https://kit.fontawesome.com/bbfd0abfad.js'></script>
+    <link rel="stylesheet" href="/style.css">
+   
+    <title>Agregar propiedad</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs'); -%>
+    <form action="/agregar" method="POST" class="crear-form">
+        <div class="main" id="main">
+    
+        
+          <div class="form-item">
+              <label for="">Nombre</label>
+              <input type="text" name="nombre" style="color: black;">
+          </div>
+          <div class="form-item">
+            <label for="">Descripcion</label>
+            <textarea name="descripcion" id="cuerpo" cols="50" rows="5" style="color: black;"></textarea>
+            
+        </div>
+        <div class="menu-movil" id="menu-movil">
+            <p>Siguiente</p>
+        </div>
+    </div>
+        <div class="sidebar" id="sidebar">
+    
+        
+        <div class="form-item">
+            <label for="">Destacada</label>
+            <select name="destacada" id="" style="color: black;">
+                <option value="true">No es Destacada</option>
+                <option value="false">Destacada</option>
+            </select>
+        </div>
+        <div class="form-item">
+            <label for="">Precio</label>
+            <input type="number" name="precio" style="color: black;">
+        </div>
+        <div class="form-item">
+            <label for="">Imagen</label>
+            <input type="file" accept="image/*" id="imagen" multiple>
+            <div id="carga"></div>
+        </div>
+        <div class="form-item">
+           
+            <input type="hidden" name="imagen" id="img">
+        </div>
+        <div class="form-item">
+            <label for="">ID</label>
+            <input type="text" name="id" placeholder="ejem: ´casa-villa-nueva´" style="color: black;">
+        </div>
+        <div class="form-item">
+            <label for="">Vendodedor</label>
+            <select name="autor" id="">
+                <option value="Gdz9sVDWF2U9JvbeoeWBirkQIAX2">Marvin Lima</option>
+            </select>
+        </div>
+        <input type="submit" value="enviar" class="btn">
+    </div>
+      </form>
+  
+  
+  <style>
+
+  </style>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sceditor@3/minified/themes/default.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/sceditor@3/minified/sceditor.min.js"></script>
+  <script src="/app/crear-v2-1.js"></script>
+  
+</body>
+</html>

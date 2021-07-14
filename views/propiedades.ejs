@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar propiedades</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('./partials/header.ejs'); -%>
+    <section class="disponibles">
+        <% propiedades.map(item =>{ %>
+            <div class="propiedad">
+                <img src="<%= item.propiedad.imagen %>" alt=""class="propiedad_img">
+                <div class="propiedad_texto">
+                    <p class="propiedad_texto_titulo"><%= item.propiedad.nombre %></p>
+                    <p>Precio: <%= item.propiedad.precio %></p>
+                    <p>Visitas: <%= item.propiedad.visitas %></p>
+                </div>
+                <div class="botones">
+                    <a href="/delete/<%= item.propiedad.id %>" class="eliminar">Eliminar</a>
+                    <a href="/editar/<%= item.propiedad.id %>" class="editar">Editar</a>
+                </div>
+                
+            </div>
+       <% }) %>
+         
+      </section>
+      <style>
+          .botones{
+              display: flex;
+              margin: 10px;
+              flex-wrap: wrap;
+              width: 100%;
+          }
+          .eliminar{
+              background-color: red;
+              border-radius: 10px;
+              padding: 5px;
+              margin: 10px;
+          }
+          .editar{
+            background-color: green;
+              border-radius: 10px;
+              padding: 5px;
+              margin: 10px;
+          }
+          .disponibles{
+              width: 90%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+          }
+          .propiedad{
+              width: 40%;
+              border: 2px solid red;
+              border-radius: 15px;
+              padding: 10px;
+              margin: 10px;
+              display: flex;
+              flex-wrap: wrap;
+          }
+          .propiedad img{
+              width: 100px;
+              height: 50%;
+          }
+          .propiedad_texto_titulo{
+              font-weight: bold;
+          }
+      </style>
+      <%- include('./partials/menu.ejs'); -%>
+</body>
+</html>
